@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaythaZero.Web", "src\RaythaZero.Web\RaythaZero.Web.csproj", "{E19200F1-8324-436C-A1F6-20BFA6789117}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B781915D-E854-4FC7-B75D-7A387A7EF181}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{23D02D35-A8FC-47EF-8428-7373EFB02530}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaythaZero.Application", "src\RaythaZero.Application\RaythaZero.Application.csproj", "{DD0326DD-3037-4488-9555-88660009732C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaythaZero.Domain", "src\RaythaZero.Domain\RaythaZero.Domain.csproj", "{C44A480C-7585-41E7-A784-3854B3DCB2B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaythaZero.Infrastructure", "src\RaythaZero.Infrastructure\RaythaZero.Infrastructure.csproj", "{3ED751E9-47C1-456F-804F-14415302C810}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E19200F1-8324-436C-A1F6-20BFA6789117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E19200F1-8324-436C-A1F6-20BFA6789117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E19200F1-8324-436C-A1F6-20BFA6789117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E19200F1-8324-436C-A1F6-20BFA6789117}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD0326DD-3037-4488-9555-88660009732C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD0326DD-3037-4488-9555-88660009732C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD0326DD-3037-4488-9555-88660009732C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD0326DD-3037-4488-9555-88660009732C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C44A480C-7585-41E7-A784-3854B3DCB2B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44A480C-7585-41E7-A784-3854B3DCB2B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44A480C-7585-41E7-A784-3854B3DCB2B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44A480C-7585-41E7-A784-3854B3DCB2B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ED751E9-47C1-456F-804F-14415302C810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED751E9-47C1-456F-804F-14415302C810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED751E9-47C1-456F-804F-14415302C810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED751E9-47C1-456F-804F-14415302C810}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E19200F1-8324-436C-A1F6-20BFA6789117} = {23D02D35-A8FC-47EF-8428-7373EFB02530}
+		{DD0326DD-3037-4488-9555-88660009732C} = {23D02D35-A8FC-47EF-8428-7373EFB02530}
+		{C44A480C-7585-41E7-A784-3854B3DCB2B2} = {23D02D35-A8FC-47EF-8428-7373EFB02530}
+		{3ED751E9-47C1-456F-804F-14415302C810} = {23D02D35-A8FC-47EF-8428-7373EFB02530}
+	EndGlobalSection
+EndGlobal

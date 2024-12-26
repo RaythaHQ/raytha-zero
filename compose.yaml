@@ -1,0 +1,6 @@
+﻿services:
+  raythazero:
+    image: raythazero
+    build:
+      context: .
+      dockerfile: RaythaZero/Dockerfile
