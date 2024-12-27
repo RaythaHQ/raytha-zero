@@ -1,27 +1,16 @@
 using System.ComponentModel.DataAnnotations;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using RaythaZero.Application.Common.Interfaces;
 using RaythaZero.Application.Common.Utils;
+using RaythaZero.Application.OrganizationSettings.Commands;
 using RaythaZero.Web.Areas.Shared.Models;
 
 namespace RaythaZero.Web.Areas.Admin.Pages.Setup;
 
-public class Setup : PageModel
+public class Index : BasePageModel
 {
-    private ISender _mediator;
-    private ICurrentOrganization _currentOrganization;
-    private IEmailerConfiguration _emailerConfiguration;
-
-    protected ISender Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<ISender>();
-    protected ICurrentOrganization CurrentOrganization => _currentOrganization ??= HttpContext.RequestServices.GetRequiredService<ICurrentOrganization>();
-    protected IEmailerConfiguration EmailerConfiguration => _emailerConfiguration ??= HttpContext.RequestServices.GetRequiredService<IEmailerConfiguration>();
-
     [BindProperty] 
     public FormModel Form { get; set; }
     
-    //helpers
     public bool MissingSmtpEnvironmentVariables { get; set; }
     public IDictionary<string, string> TimeZones
     {
@@ -31,7 +20,7 @@ public class Setup : PageModel
     public async Task<IActionResult> OnGet()
     {
         if (CurrentOrganization.InitialSetupComplete)
-            return RedirectToPage("/");
+            return RedirectToPage("/Dashboard/Index");
 
         MissingSmtpEnvironmentVariables = EmailerConfiguration.IsMissingSmtpEnvVars();
         Form = new FormModel();
@@ -40,11 +29,38 @@ public class Setup : PageModel
 
     public async Task<IActionResult> OnPost()
     {
-        var formPost = Form;
+        if (CurrentOrganization.InitialSetupComplete)
+            return RedirectToPage("/Dashboard/Index");
+
+        var input = new InitialSetup.Command
+        {
+            SmtpHost = Form.SmtpHost,
+            SmtpPort = Form.SmtpPort,
+            SmtpUsername = Form.SmtpUsername,
+            SmtpPassword = Form.SmtpPassword,
+            FirstName = Form.FirstName,
+            LastName = Form.LastName,
+            SuperAdminEmailAddress = Form.SuperAdminEmailAddress,
+            SuperAdminPassword = Form.SuperAdminPassword,
+            SmtpDefaultFromAddress = Form.SmtpDefaultFromAddress,
+            SmtpDefaultFromName = Form.SmtpDefaultFromName,
+            OrganizationName = Form.OrganizationName,
+            TimeZone = Form.TimeZone,
+            WebsiteUrl = Form.WebsiteUrl
+        };
+
+        var response = await Mediator.Send(input);
+        if (response.Success)
+        {
+            return RedirectToPage("/Dashboard/Index");
+        }
+        
+        SetErrorMessage(response.GetErrors());
+        MissingSmtpEnvironmentVariables = EmailerConfiguration.IsMissingSmtpEnvVars();
         return Page();
     }
 
-    public class FormModel : FormSubmit_ViewModel
+    public class FormModel 
     {
         [Display(Name = "First name")]
         public string FirstName { get; set; }

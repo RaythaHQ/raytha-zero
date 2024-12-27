@@ -60,7 +60,7 @@ public class BuiltInEmailTemplate : ValueObject
     {
         get
         {
-            var pathToFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Entities", "DefaultTemplates", $"{DeveloperName}.liquid");
+            var pathToFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DefaultTemplates", $"{DeveloperName}.liquid");
             return File.ReadAllText(pathToFile);
         }
     }

@@ -46,17 +46,29 @@ public class InitialSetup
         public Validator(IEmailerConfiguration emailerConfiguration)
         {
             RuleFor(x => x.SuperAdminPassword).NotEmpty().MinimumLength(8);
-            RuleFor(x => x.SuperAdminEmailAddress).EmailAddress();
+            RuleFor(x => x.SuperAdminEmailAddress).NotEmpty().EmailAddress();
             RuleFor(x => x.FirstName).NotEmpty();
             RuleFor(x => x.LastName).NotEmpty();
             RuleFor(x => x.SmtpHost).NotEmpty().When(p => emailerConfiguration.IsMissingSmtpEnvVars());
             RuleFor(x => x.SmtpPort).NotNull().GreaterThan(0).LessThanOrEqualTo(65535).When(p => emailerConfiguration.IsMissingSmtpEnvVars());
             RuleFor(x => x.OrganizationName).NotEmpty();
-            RuleFor(x => x.TimeZone).Must(DateTimeExtensions.IsValidTimeZone)
+            RuleFor(x => x.TimeZone).NotEmpty().Must(DateTimeExtensions.IsValidTimeZone)
                 .WithMessage(p => $"{p.TimeZone} timezone is unrecognized.");
-            RuleFor(x => x.WebsiteUrl).Must(StringExtensions.IsValidUriFormat)
-                .WithMessage(p => $"{p.WebsiteUrl} must be a valid URI format.");
-            RuleFor(x => x.SmtpDefaultFromAddress).EmailAddress();
+            RuleFor(x => x.WebsiteUrl).Custom((request, context) =>
+            {
+                if (string.IsNullOrWhiteSpace(request))
+                {
+                    context.AddFailure("WebsiteUrl", "'Website url' must not be empty.");
+                    return;
+                }
+
+                if (!request.IsValidUriFormat())
+                {
+                    context.AddFailure("WebsiteUrl", "'Website url' is not a valid URI format.");
+                    return;
+                }
+            });
+            RuleFor(x => x.SmtpDefaultFromAddress).NotEmpty().EmailAddress();
             RuleFor(x => x.SmtpDefaultFromName).NotEmpty();
         }
     }

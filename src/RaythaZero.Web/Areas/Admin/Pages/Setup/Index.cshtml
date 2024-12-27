@@ -1,5 +1,5 @@
 @page "/admin/setup"
-@model RaythaZero.Web.Areas.Admin.Pages.Setup.Setup
+@model RaythaZero.Web.Areas.Admin.Pages.Setup.Index
 
 @{
     Layout = "_EmptyLayout";
@@ -21,54 +21,39 @@
                                 @ViewData["ErrorMessage"]
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
-
                         }
-                        @if (ViewData["WarningMessage"] != null)
-                        {
-                            <div class="alert alert-warning alert-dismissible fade show mt-2" role="alert">
-                                @ViewData["WarningMessage"]
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        }
-                        @if (ViewData["SuccessMessage"] != null)
-                        {
-                            <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
-                                @ViewData["SuccessMessage"]
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        }
-                        <form method="post">
+                        <form method="post" novalidate>
                             <h5>Super administrator account</h5>
                             <div class="row">
                                 <div class="col">
                                     <div class="mb-3">
                                         <label class="form-label raytha-required" asp-for="@Model.Form.FirstName"></label>
-                                        <input type="text" class="form-control @Model.Form.HasError("FirstName")" asp-for="@Model.Form.FirstName" required>
-                                        <div class="invalid-feedback">@Model.Form.ErrorMessageFor("FirstName")</div>
+                                        <input type="text" class="form-control @Model.HasError("FirstName")" asp-for="@Model.Form.FirstName" required>
+                                        <div class="invalid-feedback">@Model.ErrorMessageFor("FirstName")</div>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="mb-3">
                                         <label class="form-label raytha-required" asp-for="@Model.Form.LastName"></label>
-                                        <input type="text" class="form-control @Model.Form.HasError("LastName")" asp-for="@Model.Form.LastName" required>
-                                        <div class="invalid-feedback">@Model.Form.ErrorMessageFor("LastName")</div>
+                                        <input type="text" class="form-control @Model.HasError("LastName")" asp-for="@Model.Form.LastName" required>
+                                        <div class="invalid-feedback">@Model.ErrorMessageFor("LastName")</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="mb-3">
                                     <label class="form-label raytha-required" asp-for="@Model.Form.SuperAdminEmailAddress"></label>
-                                    <input type="email" class="form-control @Model.Form.HasError(("SuperAdminEmailAddress"))"
+                                    <input type="email" class="form-control @Model.HasError(("SuperAdminEmailAddress"))"
                                         asp-for="@Model.Form.SuperAdminEmailAddress" required>
-                                    <div class="invalid-feedback">@Model.Form.ErrorMessageFor("SuperAdminEmailAddress")</div>
+                                    <div class="invalid-feedback">@Model.ErrorMessageFor("SuperAdminEmailAddress")</div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="mb-3">
                                     <label class="form-label raytha-required" asp-for="@Model.Form.SuperAdminPassword"></label>
-                                    <input type="password" class="form-control @Model.Form.HasError("SuperAdminPassword")"
+                                    <input type="password" class="form-control @Model.HasError("SuperAdminPassword")"
                                         asp-for="@Model.Form.SuperAdminPassword" required minlength="8">
-                                    <div class="invalid-feedback">@Model.Form.ErrorMessageFor("SuperAdminPassword")</div>
+                                    <div class="invalid-feedback">@Model.ErrorMessageFor("SuperAdminPassword")</div>
                                     <div class="form-text">Password must be at least 8 characters.</div>
                                 </div>
                             </div>
@@ -77,26 +62,26 @@
                             <div class="col-lg-12">
                                 <div class="mb-3">
                                     <label class="form-label raytha-required" asp-for="@Model.Form.OrganizationName"></label>
-                                    <input type="text" class="form-control @Model.Form.HasError("OrganizationName")"
+                                    <input type="text" class="form-control @Model.HasError("OrganizationName")"
                                         asp-for="@Model.Form.OrganizationName" required>
-                                    <div class="invalid-feedback">@Model.Form.ErrorMessageFor("OrganizationName")</div>
+                                    <div class="invalid-feedback">@Model.ErrorMessageFor("OrganizationName")</div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="mb-3">
                                     <label class="form-label raytha-required" asp-for="@Model.Form.WebsiteUrl"></label>
-                                    <input type="url" class="form-control @Model.Form.HasError("WebsiteUrl")"
+                                    <input type="url" class="form-control @Model.HasError("WebsiteUrl")"
                                         asp-for="@Model.Form.WebsiteUrl" required>
-                                    <div class="invalid-feedback">@Model.Form.ErrorMessageFor("WebsiteUrl")</div>
+                                    <div class="invalid-feedback">@Model.ErrorMessageFor("WebsiteUrl")</div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="mb-3">
                                     <label class="form-label raytha-required" asp-for="@Model.Form.TimeZone"></label>
-                                    <select class="form-select @Model.Form.HasError("TimeZone")" asp-for="@Model.Form.TimeZone"
+                                    <select class="form-select @Model.HasError("TimeZone")" asp-for="@Model.Form.TimeZone"
                                         asp-items="@(new SelectList(Model.TimeZones, "Key", "Value"))" required>
                                     </select>
-                                    <div class="invalid-feedback">@Model.Form.ErrorMessageFor("TimeZone")</div>
+                                    <div class="invalid-feedback">@Model.ErrorMessageFor("TimeZone")</div>
                                 </div>
                             </div>
                             <hr />
@@ -105,18 +90,18 @@
                             <div class="col-lg-12">
                                 <div class="mb-3">
                                     <label class="form-label raytha-required" asp-for="@Model.Form.SmtpDefaultFromName"></label>
-                                    <input type="text" class="form-control @Model.Form.HasError("SmtpDefaultFromName")"
+                                    <input type="text" class="form-control @Model.HasError("SmtpDefaultFromName")"
                                         asp-for="@Model.Form.SmtpDefaultFromName" required
                                         aria-describedby="SmtpDefaultFromNameHelp">
-                                    <div class="invalid-feedback">@Model.Form.ErrorMessageFor("SmtpDefaultFromName")</div>
+                                    <div class="invalid-feedback">@Model.ErrorMessageFor("SmtpDefaultFromName")</div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="mb-3">
                                     <label class="form-label raytha-required" asp-for="@Model.Form.SmtpDefaultFromAddress"></label>
-                                    <input type="email" class="form-control @Model.Form.HasError("SmtpDefaultFromAddress")"
+                                    <input type="email" class="form-control @Model.HasError("SmtpDefaultFromAddress")"
                                         asp-for="@Model.Form.SmtpDefaultFromAddress" required>
-                                    <div class="invalid-feedback">@Model.Form.ErrorMessageFor("SmtpDefaultFromAddress")</div>
+                                    <div class="invalid-feedback">@Model.ErrorMessageFor("SmtpDefaultFromAddress")</div>
                                 </div>
                             </div>
                             <hr />
@@ -130,37 +115,36 @@
                                 <div class="col-lg-12">
                                     <div class="mb-3">
                                         <label class="form-label raytha-required" asp-for="@Model.Form.SmtpHost"></label>
-                                        <input type="text" class="form-control @Model.Form.HasError("SmtpHost")"
+                                        <input type="text" class="form-control @Model.HasError("SmtpHost")"
                                             asp-for="@Model.Form.SmtpHost" required>
-                                        <div class="invalid-feedback">@Model.Form.ErrorMessageFor("SmtpHost")</div>
+                                        <div class="invalid-feedback">@Model.ErrorMessageFor("SmtpHost")</div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="mb-3">
                                         <label class="form-label raytha-required" asp-for="@Model.Form.SmtpPort"></label>
-                                        <input type="number" class="form-control @Model.Form.HasError("SmtpPort")"
+                                        <input type="number" class="form-control @Model.HasError("SmtpPort")"
                                             asp-for="@Model.Form.SmtpPort" required max="65535">
-                                        <div class="invalid-feedback">@Model.Form.ErrorMessageFor("SmtpPort")</div>
+                                        <div class="invalid-feedback">@Model.ErrorMessageFor("SmtpPort")</div>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="mb-3">
                                         <label class="form-label" asp-for="@Model.Form.SmtpUsername"></label>
-                                        <input type="text" class="form-control @Model.Form.HasError("SmtpUsername")"
+                                        <input type="text" class="form-control @Model.HasError("SmtpUsername")"
                                             asp-for="@Model.Form.SmtpUsername">
-                                        <div class="invalid-feedback">@Model.Form.ErrorMessageFor("SmtpUsername")</div>
+                                        <div class="invalid-feedback">@Model.ErrorMessageFor("SmtpUsername")</div>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="mb-3">
                                         <label class="form-label" asp-for="@Model.Form.SmtpPassword"></label>
-                                        <input type="password" class="form-control @Model.Form.HasError("SmtpPassword")"
+                                        <input type="password" class="form-control @Model.HasError("SmtpPassword")"
                                             asp-for="@Model.Form.SmtpPassword">
-                                        <div class="invalid-feedback">@Model.Form.ErrorMessageFor("SmtpPassword")</div>
+                                        <div class="invalid-feedback">@Model.ErrorMessageFor("SmtpPassword")</div>
                                     </div>
                                 </div>
                             }
-                            <input type="hidden" asp-for="@Model.MissingSmtpEnvironmentVariables">
                             <button type="submit" class="btn btn-success mt-4">Save</button>
                         </form>
                     </div>
