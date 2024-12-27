@@ -21,6 +21,39 @@
     </ItemGroup>
     
     <ItemGroup>
+      <Folder Include="Areas\Api\" />
       <Folder Include="Filters\" />
+      <Folder Include="wwwroot\admin\js\" />
+      <Folder Include="wwwroot\public\" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Areas\Public\Pages\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Public\Pages\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Public\Pages\Privacy.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Public\Pages\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Public\Pages\Shared\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Public\Pages\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Public\Pages\_ViewStart.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Privacy.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Shared\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\_ViewStart.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\site.js" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <AdditionalFiles Include="Areas\Admin\Pages\Shared\_Layout.cshtml" />
+      <AdditionalFiles Include="Areas\Admin\Pages\Shared\_ValidationScriptsPartial.cshtml" />
+      <AdditionalFiles Include="Areas\Public\Pages\Error.cshtml" />
+      <AdditionalFiles Include="Areas\Public\Pages\Index.cshtml" />
+      <AdditionalFiles Include="Areas\Public\Pages\Privacy.cshtml" />
+      <AdditionalFiles Include="Areas\Public\Pages\Shared\_Layout.cshtml" />
+      <AdditionalFiles Include="Areas\Public\Pages\Shared\_ValidationScriptsPartial.cshtml" />
+      <AdditionalFiles Include="Areas\Public\Pages\_ViewImports.cshtml" />
+      <AdditionalFiles Include="Areas\Public\Pages\_ViewStart.cshtml" />
     </ItemGroup>
 </Project>

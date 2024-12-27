@@ -1,9 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+namespace RaythaZero.Web.Areas.Public.Pages;
 
-namespace RaythaZero.Web.Pages;
-
-public class IndexModel : PageModel
+public class IndexModel : BasePublicPageModel
 {
     private readonly ILogger<IndexModel> _logger;
 

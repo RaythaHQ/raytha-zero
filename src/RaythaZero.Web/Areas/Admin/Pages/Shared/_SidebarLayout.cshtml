@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "_Layout";
+}
+<nav id="sidebarMenu" class="sidebar d-lg-block bg-raytha-blue text-white collapse">
+    Hello
+</nav>
+
+<main role="main" class="pb-3 content">
+    @RenderBody()
+</main>
+
+@section Header {
+    @Html.Partial("_HeaderPartial")
+}
+
+@section Footer {
+    @Html.Partial("_FooterPartial")
+}

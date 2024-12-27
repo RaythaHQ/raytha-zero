@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - RaythaZero.Web</title>
+    <link rel="stylesheet" href="~/admin/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/admin/css/volt.css" asp-append-version="true"/>
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico">
+
+    @RenderSection("headstyles", false)
+</head>
+<body>
+@RenderSection("Header", required:false)
+@RenderBody()
+@RenderSection("Footer", required:false)
+<script src="~/admin/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
