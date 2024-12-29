@@ -10,7 +10,6 @@ public class Index : BasePageModel
 {
     [BindProperty] 
     public FormModel Form { get; set; }
-    
     public bool MissingSmtpEnvironmentVariables { get; set; }
     public IDictionary<string, string> TimeZones
     {

@@ -20,6 +20,7 @@ public class BasePageModel : PageModel
     private IFileStorageProvider _fileStorageProvider;
     private IEmailer _emailer;
     private IEmailerConfiguration _emailerConfiguration;  
+    private IRelativeUrlBuilder _relativeUrlBuilder;
     
     protected ISender Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<ISender>();
     protected ICurrentOrganization CurrentOrganization => _currentOrganization ??= HttpContext.RequestServices.GetRequiredService<ICurrentOrganization>(); 
@@ -28,6 +29,7 @@ public class BasePageModel : PageModel
     protected IFileStorageProviderSettings FileStorageProviderSettings => _fileStorageSettings ??= HttpContext.RequestServices.GetRequiredService<IFileStorageProviderSettings>();
     protected IEmailer Emailer => _emailer ??= HttpContext.RequestServices.GetRequiredService<IEmailer>();
     protected IEmailerConfiguration EmailerConfiguration => _emailerConfiguration ??= HttpContext.RequestServices.GetRequiredService<IEmailerConfiguration>();
+    protected IRelativeUrlBuilder RelativeUrlBuilder => _relativeUrlBuilder ??= HttpContext.RequestServices.GetRequiredService<IRelativeUrlBuilder>();
     
     public Dictionary<string, string> ValidationFailures { get; set; }
     
@@ -35,8 +37,6 @@ public class BasePageModel : PageModel
         PageHandlerExecutingContext context,
         PageHandlerExecutionDelegate next)
     {
-        // Shared logic before handler execution
-        await base.OnPageHandlerExecutionAsync(context, next);
         if (CurrentOrganization.RedirectWebsite.IsValidUriFormat())
         {
             context.HttpContext.Response.Redirect(CurrentOrganization.RedirectWebsite);

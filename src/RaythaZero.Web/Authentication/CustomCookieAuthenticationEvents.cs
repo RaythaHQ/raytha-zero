@@ -54,30 +54,16 @@ public class CustomCookieAuthenticationEvents : CookieAuthenticationEvents
         };
 
         var systemPermissions = new List<string>();
-        var contentTypePermissions = new List<string>();
 
         foreach (var role in user.Result.Roles)
         {
             claims.Add(new Claim(ClaimTypes.Role, role.DeveloperName.ToString()));
             systemPermissions.AddRange(role.SystemPermissions);
-
-            foreach (var contentTypePermission in role.ContentTypePermissionsFriendlyNames)
-            {
-                foreach (var granularPermission in contentTypePermission.Value)
-                {
-                    contentTypePermissions.Add($"{contentTypePermission.Key}_{granularPermission}");
-                }
-            }
         }
 
         foreach (var systemPermission in systemPermissions.Distinct())
         {
             claims.Add(new Claim(RaythaClaimTypes.SystemPermissions, systemPermission));
-        }
-
-        foreach (var contentTypePermission in contentTypePermissions.Distinct())
-        {
-            claims.Add(new Claim(RaythaClaimTypes.ContentTypePermissions, contentTypePermission));
         }
 
         foreach (var userGroup in user.Result.UserGroups)

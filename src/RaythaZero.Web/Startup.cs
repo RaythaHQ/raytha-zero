@@ -4,6 +4,7 @@ using Microsoft.Extensions.FileProviders;
 using RaythaZero.Application;
 using RaythaZero.Application.Common.Utils;
 using RaythaZero.Infrastructure.Persistence;
+using RaythaZero.Web.Areas.Admin.Pages.Login;
 using RaythaZero.Web.Middlewares;
 
 namespace RaythaZero.Web;
