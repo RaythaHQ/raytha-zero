@@ -18,16 +18,21 @@
   <component name="ChangeListManager">
     <list default="true" id="2e2757c6-71fa-485a-a3ef-c78694e604f5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RaythaZero/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RaythaZero/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RaythaZero.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/RaythaZero.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Application/Common/Interfaces/IRelativeUrlBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Application/Common/Interfaces/IRelativeUrlBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Application/Common/Utils/StringExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Application/Common/Utils/StringExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/BaseAdminPageModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/BaseAdminPageModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Setup/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Setup/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_SidebarLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_SidebarLayout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Shared/Models/BasePageModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Shared/Models/BasePageModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Authentication/CustomCookieAuthenticationEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Authentication/CustomCookieAuthenticationEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Services/RelativeUrlBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Services/RelativeUrlBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Dashboard/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Dashboard/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Login/ForgotPassword.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Login/ForgotPassword.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Login/ForgotPasswordComplete.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Login/ForgotPasswordComplete.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Login/ForgotPasswordSent.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Login/ForgotPasswordSent.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Login/LoginWithEmailAndPassword.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Login/LoginWithEmailAndPassword.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Login/LoginWithMagicLink.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Login/LoginWithMagicLink.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Login/LoginWithMagicLinkSent.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Login/LoginWithMagicLinkSent.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_EmptyLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/EmptyLayout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_EmptyLayout.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/EmptyLayout.cshtml.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_FooterPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_Partials/Footer.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_FullWidthLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/FullWidthLayout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_FullWidthLayout.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/FullWidthLayout.cshtml.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_HeaderPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_Partials/Header.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_SidebarLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/SidebarLayout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_SidebarLayout.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/SidebarLayout.cshtml.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -59,17 +59,6 @@
             }
 
             <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
-            <li class="nav-item">
-                <a asp-route="emptyroute" target="_blank" class="nav-link d-flex justify-content-between">
-          <span>
-            <span class="sidebar-icon">
-              <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" clip-rule="evenodd"></path></svg>
-            </span>
-            <span class="sidebar-text">Live Website</span>
-          </span>
-                </a>
-            </li>
-
 
             @if ((await AuthorizationService.AuthorizeAsync(User, BuiltInSystemPermission.MANAGE_SYSTEM_SETTINGS_PERMISSION)).Succeeded)
             {
@@ -89,8 +78,8 @@
 
             @if ((await AuthorizationService.AuthorizeAsync(User, BuiltInSystemPermission.MANAGE_AUDIT_LOGS_PERMISSION)).Succeeded)
             {
-                <li class="nav-item @(IsActivePage("Audit Log"))">
-                    <a asp-route="auditlogsindex" class="nav-link d-flex justify-content-between">
+                <li class="nav-item @(IsActivePage("Audit Logs"))">
+                    <a asp-page="/AuditLogs/Index" class="nav-link d-flex justify-content-between">
               <span>
                 <span class="sidebar-icon">
                   <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
@@ -134,7 +123,7 @@
                             @if (hasManageSystem)
                             {
                                 <li class="nav-item @(IsActivePage("Configuration"))">
-                                    <a class="nav-link" asp-route="configurationindex">
+                                    <a class="nav-link" asp-page="/Configuration/Index">
                                         <span class="sidebar-text">Configuration</span>
                                     </a>
                                 </li>
@@ -144,7 +133,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item @(IsActivePage("SMTP"))">
-                                    <a class="nav-link" asp-route="smtpindex">
+                                    <a class="nav-link" asp-page="/Smtp/Index">
                                         <span class="sidebar-text">SMTP</span>
                                     </a>
                                 </li>
@@ -170,15 +159,15 @@
                 <div class="multi-level collapse @(ExpandSubMenu("ExpandProfileMenu"))" role="list"
                      id="submenu-account">
                     <ul class="flex-column nav">
-                        <li class="nav-item @(IsActivePage("My Profile"))">
-                            <a class="nav-link" asp-route="adminprofile">
+                        <li class="nav-item @(IsActivePage("Profile"))">
+                            <a class="nav-link" asp-area="Admin" asp-page="/Profile/Index">
                                 <span class="sidebar-text">My Profile</span>
                             </a>
                         </li>
                         @if (CurrentOrganization.EmailAndPasswordIsEnabledForAdmins)
                         {
                             <li class="nav-item @(IsActivePage("Change Password"))">
-                                <a class="nav-link" asp-route="adminchangepassword">
+                                <a class="nav-link" asp-area="Admin" asp-page="/Profile/ChangePassword">
                                     <span class="sidebar-text">Change Password</span>
                                 </a>
                             </li>
@@ -196,13 +185,14 @@
 </nav>
 
 <main role="main" class="pb-3 content">
+    @Html.Partial("_Partials/FlashMessage")
     @RenderBody()
 </main>
 
 @section Header {
-    @Html.Partial("_HeaderPartial")
+    @Html.Partial("_Partials/Header")
 }
 
 @section Footer {
-    @Html.Partial("_FooterPartial")
+    @Html.Partial("_Partials/Footer")
 }
