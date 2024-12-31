@@ -40,9 +40,7 @@ public class CreateAuthenticationScheme
         {
             RuleFor(x => x.Label).NotEmpty();
             RuleFor(x => x.LoginButtonText).NotEmpty();
-            RuleFor(x => x.AuthenticationSchemeType).NotEmpty();
             RuleFor(x => x.SignInUrl)
-                .NotEmpty()
                 .Must(StringExtensions.IsValidUriFormat)
                 .When(p => p.AuthenticationSchemeType == AuthenticationSchemeType.Jwt.DeveloperName || p.AuthenticationSchemeType == AuthenticationSchemeType.Saml.DeveloperName)
                 .WithMessage("Sign in url is not a valid url.");
@@ -62,7 +60,7 @@ public class CreateAuthenticationScheme
             RuleFor(x => x.AuthenticationSchemeType).Must(x => x == AuthenticationSchemeType.Jwt.DeveloperName || x == AuthenticationSchemeType.Saml.DeveloperName)
                 .WithMessage("Invalid authentication scheme type.");
             RuleFor(x => x.DeveloperName).Must(StringExtensions.IsValidDeveloperName).WithMessage("Invalid developer name.");
-            RuleFor(x => x.DeveloperName).NotEmpty().Must((request, developerName) =>
+            RuleFor(x => x.DeveloperName).Must((request, developerName) =>
             {
                 var isDeveloperNameAlreadyExist = db.AuthenticationSchemes.Any(p => p.DeveloperName == request.DeveloperName.ToDeveloperName());
                 return !isDeveloperNameAlreadyExist;
