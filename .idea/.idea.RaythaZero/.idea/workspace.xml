@@ -18,27 +18,19 @@
   <component name="ChangeListManager">
     <list default="true" id="2e2757c6-71fa-485a-a3ef-c78694e604f5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RaythaZero/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RaythaZero/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RaythaZero.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/RaythaZero.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Application/Admins/Commands/CreateAdmin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Application/Admins/Commands/CreateAdmin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/ApiKeys.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/ApiKeys.cshtml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Application/OrganizationSettings/Commands/InitialSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Application/OrganizationSettings/Commands/InitialSetup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Application/Roles/Commands/CreateRole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Application/Roles/Commands/CreateRole.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Application/Roles/Commands/EditRole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Application/Roles/Commands/EditRole.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/ApiKeys.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/ApiKeys.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/ApiKeys.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/ApiKeys.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/Create.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/Create.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/Create.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/Edit.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/Edit.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/Edit.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/ResetPassword.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/ResetPassword.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/ResetPassword.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/ResetPassword.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/AuditLogs/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/AuditLogs/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Setup/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Setup/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/FullWidthLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/FullWidthLayout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/SidebarLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/SidebarLayout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_Partials/Footer.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/_Partials/Footer.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/_ViewImports.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Shared/Models/BasePageModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Shared/Models/BasePageModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/RaythaZero.Web.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/RaythaZero.Web.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/SubActionLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Admins/SubActionLayout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Roles/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Roles/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Roles/Create.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Roles/Create.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Roles/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Roles/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Roles/Edit.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Roles/Edit.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Roles/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Roles/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Roles/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Roles/Index.cshtml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +95,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>

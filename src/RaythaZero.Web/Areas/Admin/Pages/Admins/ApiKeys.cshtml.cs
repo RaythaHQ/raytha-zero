@@ -62,6 +62,21 @@ public class ApiKeys : BaseAdminPageModel, IHasListView<ApiKeys.ApiKeysListItemV
         }
         return RedirectToPage("ApiKeys", new { id }); 
     }
+
+    public async Task<IActionResult> OnPostDelete(string id, string apikeyId)
+    {
+        var response = await Mediator.Send(new DeleteApiKey.Command { Id = apikeyId });
+        if (response.Success)
+        {
+            SetSuccessMessage("Api key successfully removed.");
+        }
+        else
+        {
+            SetErrorMessage(response.Error, response.GetErrors());
+        }
+
+        return RedirectToPage("/Admins/ApiKeys", new { id }); 
+    }
     
     public class ApiKeysListItemViewModel
     {

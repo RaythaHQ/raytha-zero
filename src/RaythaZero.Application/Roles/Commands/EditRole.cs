@@ -14,7 +14,6 @@ public class EditRole
     {
         public string Label { get; init; } = null!;
         public IEnumerable<string> SystemPermissions { get; init; } = null!;
-        public Dictionary<string, IEnumerable<string>> ContentTypePermissions { get; init; } = null!;
     }
 
     public class Validator : AbstractValidator<Command>

@@ -141,15 +141,6 @@ public class InitialSetup
                 CreationTime = DateTime.UtcNow
             };
             roles.Add(adminRole);
-            Role editorRole = new Role
-            {
-                Id = Guid.NewGuid(),
-                Label = BuiltInRole.Editor.DefaultLabel,
-                DeveloperName = BuiltInRole.Editor,
-                SystemPermissions = BuiltInRole.Editor.DefaultSystemPermission,
-                CreationTime = DateTime.UtcNow
-            };
-            roles.Add(editorRole);
 
             var salt = PasswordUtility.RandomSalt();
             var superAdmin = new User
