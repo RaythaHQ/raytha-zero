@@ -40,7 +40,7 @@ public class CreateAdmin
                     context.AddFailure("EmailAddress", "Another user with this email address already exists.");
                     return;
                 }
-            });
+            }).When(p => !string.IsNullOrWhiteSpace(p.EmailAddress));
         }
     }
 

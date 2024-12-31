@@ -1,6 +1,6 @@
 using CSharpVitamins;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using RaythaZero.Application.Admins.Commands;
 using RaythaZero.Application.AuditLogs.Queries;
 using RaythaZero.Application.AuthenticationSchemes.Commands;
@@ -12,10 +12,12 @@ using RaythaZero.Application.OrganizationSettings.Commands;
 using RaythaZero.Application.Roles.Commands;
 using RaythaZero.Application.UserGroups.Commands;
 using RaythaZero.Application.Users.Commands;
+using RaythaZero.Domain.Entities;
 using RaythaZero.Web.Areas.Shared.Models;
 
 namespace RaythaZero.Web.Areas.Admin.Pages.AuditLogs;
 
+[Authorize(Policy = BuiltInSystemPermission.MANAGE_AUDIT_LOGS_PERMISSION)]
 public class Index : BaseAdminPageModel
 {
     public DateTime? StartDate { get; set; }

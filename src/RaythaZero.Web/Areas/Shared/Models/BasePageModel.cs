@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RaythaZero.Application.Common.Interfaces;
 using RaythaZero.Application.Common.Utils;
+using RaythaZero.Domain.ValueObjects;
 
 namespace RaythaZero.Web.Areas.Shared.Models;
 
@@ -52,6 +53,55 @@ public class BasePageModel : PageModel
         
         await next();
         CheckIfErrorOrSuccessMessageExist();
+
+        var handlerInstance = context.HandlerInstance;
+        var instanceType = handlerInstance.GetType();
+        var hasListViewInterface = instanceType.GetInterfaces()
+            .FirstOrDefault(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IHasListView<>));
+
+        if (hasListViewInterface != null)
+        {
+            string search = context.HttpContext.Request.Query["search"];
+            int pageNumber = Convert.ToInt32(context.HttpContext.Request.Query["pageNumber"]);
+            int pageSize = Convert.ToInt32(context.HttpContext.Request.Query["pageSize"]);
+            pageSize = pageSize == 0 ? 50 : pageSize;
+            string orderBy = context.HttpContext.Request.Query["orderBy"].ToString().Trim();
+            string filter = context.HttpContext.Request.Query["filter"];
+            string actionName = context.RouteData.Values["page"].ToString();
+
+            var listViewProperty = hasListViewInterface.GetProperty("ListView");
+            if (listViewProperty != null)
+            {
+                var listViewValue = listViewProperty.GetValue(handlerInstance);
+                if (listViewValue is IPaginationViewModel paginationModel)
+                {
+                    paginationModel.Search = search ?? string.Empty;
+                    paginationModel.Filter = filter ?? string.Empty;
+                    paginationModel.PageNumber = Math.Max(pageNumber, 1);
+                    paginationModel.PageSize = Math.Clamp(pageSize, 1, 1000);
+                    paginationModel.OrderByPropertyName = string.Empty;
+                    paginationModel.OrderByDirection = string.Empty;
+                    paginationModel.PageName = actionName;
+                    
+                    if (string.IsNullOrEmpty(orderBy))
+                    {
+                        paginationModel.OrderByDirection = string.Empty;
+                        paginationModel.OrderByPropertyName = string.Empty;
+                    }
+                    else
+                    {
+                        var sortOrder = SplitOrderByPhrase.From(orderBy);
+                        if (sortOrder != null)
+                        {
+                            paginationModel.OrderByPropertyName = sortOrder.PropertyName;
+                            paginationModel.OrderByDirection = sortOrder.Direction;
+                        }
+                    }
+
+                    listViewProperty.SetValue(handlerInstance, paginationModel);
+                }
+            }
+        }
     }
     
     protected void CheckIfErrorOrSuccessMessageExist()
@@ -117,5 +167,30 @@ public class BasePageModel : PageModel
     public string ErrorMessageFor(string propertyName)
     {
         return ValidationFailures?.FirstOrDefault(p => p.Key == propertyName).Value;
+    }
+}
+
+public interface IHasListView<T> 
+{
+    public ListViewModel<T> ListView { get; set; }
+}
+
+public class SplitOrderByPhrase
+{
+    public string PropertyName { get; set; }
+    public string Direction { get; set; }
+    public static SplitOrderByPhrase From(string orderByPhrase)
+    {
+        try
+        {
+            var firstSortOrderItem = orderByPhrase.Split(",").Select(p => p.Trim()).ToArray().First();
+            var orderBySplit = firstSortOrderItem.Split(" ").Select(p => p.Trim()).Where(p => !string.IsNullOrEmpty(p)).ToArray();
+            var s = SortOrder.From(orderBySplit[1]);
+            return new SplitOrderByPhrase { PropertyName = orderBySplit[0], Direction = s.DeveloperName };
+        }
+        catch (NotImplementedException)
+        {
+            return null;
+        }
     }
 }
