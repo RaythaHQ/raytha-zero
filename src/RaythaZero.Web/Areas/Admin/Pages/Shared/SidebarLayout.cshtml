@@ -64,7 +64,7 @@
             @if ((await AuthorizationService.AuthorizeAsync(User, BuiltInSystemPermission.MANAGE_SYSTEM_SETTINGS_PERMISSION)).Succeeded)
             {
                 <li class="nav-item @(IsActivePage("Email Templates"))">
-                    <a asp-route="emailtemplatesindex" class="nav-link d-flex justify-content-between">
+                    <a asp-page="/EmailTemplates/Index" class="nav-link d-flex justify-content-between">
                   <span>
                       <span class="sidebar-icon">
                           <svg class="icon icon-xs me-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">

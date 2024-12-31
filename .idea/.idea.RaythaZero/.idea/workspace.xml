@@ -18,17 +18,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2e2757c6-71fa-485a-a3ef-c78694e604f5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RaythaZero/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RaythaZero/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Application/AuthenticationSchemes/Commands/CreateAuthenticationScheme.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Application/AuthenticationSchemes/Commands/CreateAuthenticationScheme.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/AuthenticationSchemes/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/AuthenticationSchemes/Create.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/AuthenticationSchemes/Create.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/AuthenticationSchemes/Create.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/AuthenticationSchemes/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/AuthenticationSchemes/Edit.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/AuthenticationSchemes/Edit.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/AuthenticationSchemes/Edit.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/AuthenticationSchemes/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/AuthenticationSchemes/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/AuthenticationSchemes/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/AuthenticationSchemes/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/EmailTemplates/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/EmailTemplates/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/EmailTemplates/Edit.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/EmailTemplates/Edit.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/EmailTemplates/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/EmailTemplates/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/EmailTemplates/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/EmailTemplates/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/EmailTemplates/Revisions.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/EmailTemplates/Revisions.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/EmailTemplates/Revisions.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/EmailTemplates/Revisions.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/SidebarLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Shared/SidebarLayout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/UserGroups/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/UserGroups/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Users/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/RaythaZero.Web/Areas/Admin/Pages/Users/Index.cshtml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
