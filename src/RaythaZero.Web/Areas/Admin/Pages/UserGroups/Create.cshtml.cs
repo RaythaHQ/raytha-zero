@@ -1,11 +1,49 @@
-using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using RaythaZero.Application.UserGroups.Commands;
+using RaythaZero.Domain.Entities;
 
 namespace RaythaZero.Web.Areas.Admin.Pages.UserGroups;
 
-public class Create : PageModel
+[Authorize(Policy = BuiltInSystemPermission.MANAGE_USERS_PERMISSION)]
+public class Create : BaseAdminPageModel
 {
-    public void OnGet()
+    [BindProperty]
+    public FormModel Form { get; set; }
+    public async Task<IActionResult> OnGet()
     {
-        
+        Form = new FormModel();
+        return Page();
+    }
+
+    public async Task<IActionResult> OnPost()
+    {
+        var input = new CreateUserGroup.Command
+        {
+            Label = Form.Label,
+            DeveloperName = Form.DeveloperName
+        };
+        var response = await Mediator.Send(input);
+
+        if (response.Success)
+        {
+            SetSuccessMessage($"{Form.Label} was created successfully.");
+            return RedirectToPage("/UserGroups/Index");
+        }
+        else
+        {
+            SetErrorMessage("There was an error attempting to create this user group. See the error below.", response.GetErrors());
+            return Page();
+        } 
+    }
+
+    public record FormModel
+    {
+        [Display(Name = "Label")]
+        public string Label { get; set; }
+
+        [Display(Name = "Developer name")]
+        public string DeveloperName { get; set; } 
     }
 }

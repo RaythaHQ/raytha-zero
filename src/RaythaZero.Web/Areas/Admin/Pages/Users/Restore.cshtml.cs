@@ -6,19 +6,18 @@ using RaythaZero.Domain.Entities;
 namespace RaythaZero.Web.Areas.Admin.Pages.Users;
 
 [Authorize(Policy = BuiltInSystemPermission.MANAGE_USERS_PERMISSION)]
-public class Suspend : BaseAdminPageModel
+public class Restore : BaseAdminPageModel
 {
     public async Task<IActionResult> OnPost(string id)
     {
-        var input = new SetIsActive.Command { Id = id, IsActive = false };
-        var response = await Mediator.Send(input);
+        var response = await Mediator.Send(new SetIsActive.Command { Id = id, IsActive = true });
         if (response.Success)
         {
-            SetSuccessMessage($"Account has been suspended.");
+            SetSuccessMessage($"Account has been restored.");
         }
         else
         {
-            SetErrorMessage(response.Error, response.GetErrors());
+            SetErrorMessage(response.Error);
         }
 
         return RedirectToPage("/Users/Edit", new { id }); 
