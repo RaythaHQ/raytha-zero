@@ -1,6 +1,59 @@
+/src/RaythaZero.Web/user-uploads/*
+
+# Build Folders
 bin/
 obj/
-/packages/
-riderModule.iml
-/_ReSharper.Caches/
-.idea/.idea.RaythaZero/.idea/workspace.xml
+
+# User-Specific Files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Dependencies
+packages/
+*.nupkg
+project.lock.json
+project.assets.json
+packages.lock.json
+
+# Logs & Debugging
+*.log
+logs/
+*.tlog
+*.lastcodeanalysissucceeded
+ServiceFabricBackup/
+
+# Resharper / Rider
+*.DotSettings.user
+resharper.xml
+
+# Entity Framework Migrations
+Migrations/
+
+# ASP.NET Core
+appsettings.*.json
+secrets.json
+
+# Rider & VS Code
+.idea/
+.vscode/
+
+# NuGet
+.nuget/
+
+# Rider-specific
+*.sln.iml
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Azure DevOps
+.azuredevops/
+
+# Other OS-specific files
+.DS_Store
+Thumbs.db
