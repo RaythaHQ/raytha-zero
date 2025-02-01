@@ -37,7 +37,6 @@ secrets.json
 
 # Rider & VS Code
 .idea/
-.vscode/
 
 # NuGet
 .nuget/
