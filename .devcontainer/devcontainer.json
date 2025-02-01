@@ -1,0 +1,32 @@
+{
+    "name": "Codespace for .NET 8 + PostgreSQL",
+    "image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
+    "features": {
+      "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+    },
+    "postCreateCommand": "dotnet restore",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-dotnettools.csharp",
+          "ms-azuretools.vscode-docker",
+          "ms-python.python"
+        ]
+      }
+    },
+    "forwardPorts": [5432],
+    "mounts": [
+      "source=/var/lib/postgresql/data,target=/var/lib/postgresql/data,type=volume"
+    ],
+    "containerEnv": {
+      "POSTGRES_USER": "postgres",
+      "POSTGRES_PASSWORD": "changeme",
+      "POSTGRES_DB": "rathazero"
+    },
+    "runArgs": [
+      "--network=host"
+    ],
+    "dockerComposeFile": "docker-compose.gh-cs.yaml",
+    "service": "app"
+  }
+  
