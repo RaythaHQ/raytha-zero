@@ -5,8 +5,6 @@ bin/
 obj/
 
 # User-Specific Files
-.vscode/
-.idea/
 *.suo
 *.user
 *.userosscache
