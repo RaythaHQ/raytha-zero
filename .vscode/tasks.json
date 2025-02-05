@@ -10,6 +10,19 @@
           "${workspaceFolder}/RaythaZero.sln"
         ],
         "problemMatcher": "$msCompile"
+      },
+
+      // New Build Task for DevContainer
+      {
+        "label": "build (DevContainer)",
+        "type": "shell",
+        "command": "dotnet build",
+        "args": [
+          "${workspaceFolder}/src/RaythaZero.Web/RaythaZero.Web.csproj"  // Use Linux-style path
+        ],
+        "problemMatcher": "$msCompile",
+        "group": "build",
+        "isDefault": true
       }
     ]
   }

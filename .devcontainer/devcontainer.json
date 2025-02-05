@@ -1,5 +1,6 @@
 {
     "name": "Codespace for .NET 8 + PostgreSQL",
+    "workspaceFolder": "/workspace",
     "dockerComposeFile": "docker-compose.yaml",
     "service": "app",
     "features": {
@@ -8,7 +9,8 @@
       "ghcr.io/devcontainers/features/dotnet:2": {},
       "ghcr.io/itsmechlark/features/postgresql:1": {}
     },
-    "postCreateCommand": "dotnet restore",
+    "postCreateCommand": "dotnet restore && dotnet dev-certs https",
+    "postStartCommand": "git clean -xdf",
     "customizations": {
       "vscode": {
         "extensions": [
